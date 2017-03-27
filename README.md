@@ -7,7 +7,7 @@ UUID Version 6 for Node.js
 ## Quickstart
 
 ```js
-const uuid = require('uuid');
+const uuid = require('uuid-with-v6');
 
 console.log(uuid.v6())
 ```
