@@ -1,4 +1,4 @@
-uuid-with-v6
+uuid-with-v6 [![Build Status](https://travis-ci.org/kurttheviking/uuid-with-v6-js.svg?branch=master)](https://travis-ci.org/kurttheviking/uuid-with-v6-js)
 ============
 
 UUID Version 6 for Node.js
