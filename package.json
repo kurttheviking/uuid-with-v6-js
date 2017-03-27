@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/kurttheviking/uuid-with-v6-js#readme",
   "dependencies": {
-    "mathjs": "^3.10.1",
     "uuid": "3.0.1"
   },
   "devDependencies": {
