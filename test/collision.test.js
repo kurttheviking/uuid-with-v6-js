@@ -27,8 +27,8 @@ describe('collision: uuid#v6', () => {
   }).timeout(30000);
 });
 
-describe('collision: uuid#v6 with MAC', () => {
-  const v6 = require('../index').v6create({ disableRandom: true });
+describe('collision: uuid#v6 with disableRandom option activated', () => {
+  const v6 = require('../index').v6setup({ disableRandom: true });
 
   it('does not collide when generating 1,000,000 sequetual ids in a single process', () => {
     function check() {

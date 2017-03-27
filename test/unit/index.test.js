@@ -45,8 +45,8 @@ describe('uuid#v6', () => {
     expect(index.v4).to.be.a('function');
   });
 
-  it('exports a v6create function', () => {
-    expect(index.v6create).to.be.a('function');
+  it('exports a v6setup function', () => {
+    expect(index.v6setup).to.be.a('function');
   });
 
   it('proxies uuid#v1 calls', () => {
@@ -114,7 +114,7 @@ describe('uuid#v6 with disableRandom option activated', () => {
 
     mockery.registerMock('uuid', uuidStub);
 
-    v6 = require('../../index').v6create({ disableRandom: true });
+    v6 = require('../../index').v6setup({ disableRandom: true });
   });
 
   afterEach(() => {

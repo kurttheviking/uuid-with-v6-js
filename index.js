@@ -24,4 +24,4 @@ function create(opts) {
   return generateId;
 }
 
-module.exports = Object.assign(uuid, { v6: create(), v6create: create });
+module.exports = Object.assign(uuid, { v6: create(), v6setup: create });

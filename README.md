@@ -48,11 +48,11 @@ console.log(uuid.v6());
 // 1e7126af-f130-6780-adb4-8bbe7368fc2f
 ```
 
-### `uuid#v6create`
+### `uuid#v6setup`
 
 #### Definition
 
-`uuid.v6create([options])`
+`uuid.v6setup([options])`
 
 #### Parameters
 
@@ -71,12 +71,12 @@ A UUIDv6 id generator.
 ```js
 const uuid = require('uuid-with-v6');
 
-const v6 = uuid.v6create();
+const v6 = uuid.v6setup();
 
 console.log(v6());
 // 1e7126af-f130-6780-adb4-8bbe7368fc2f
 
-const v6WithMAC = uuid.v6create({ disableRandom: true });
+const v6WithMAC = uuid.v6setup({ disableRandom: true });
 
 console.log(v6WithMAC());
 // '1e7126cb-6914-60b0-8c07-8a41b327fae3'
@@ -87,9 +87,9 @@ console.log(v6WithMAC());
 
 Inspired by [UUID "Version 6", *The version RFC 4122 forgot*](https://bradleypeabody.github.io/uuidv6/), this module extends the popular [uuid module](https://www.npmjs.com/package/uuid) to provide a `v6` method.
 
-"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in high entropy identifiers where lexicographic sorting also yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted. That said, the clock sequence is retained to mitigate time-based collisions within the same process.
+"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in identifiers where lexicographic sorting also yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted.
 
-Internally, this module implements the "Version 6" specification by first generating a UUIDv1, rearranging the timestamp, then generating 8 cryptographically strong bytes to populate the remaining portion of the identifier. Similar to Version 1, the MAC address data can be retained by constructing a UUIDv6 generator with the `disableRandom` option enabled (see examples below).
+Internally, this module implements the "Version 6" specification by first creating a UUIDv1, rearranging the timestamp, then generating eight cryptographically-strong bytes to populate the remaining portion of the identifier. Similar to Version 1, clock sequence and MAC address data can be retained by constructing a UUIDv6 generator with the `disableRandom` option (see the example below).
 
 ### UUIDv1 versus UUIDv6
 
@@ -129,29 +129,80 @@ ab116740-1269-11e7-a24b-96d95aa38c32 1e71269a-b116-6740-a694-68c004266291
 
 ### Performance
 
-This module generates a UUIDv1 as well as a series of random bytes to compose a single UUIDv6. As a result, id generation is slower than some alternatives.
+By default, this module generates a UUIDv1 as well as a series of random bytes to compose a single UUIDv6. As a result, id generation is slower than some alternatives. Using the `disableRandom` option improves performance but leaks MAC information.
 
 ```
-scuid
-  generate id .................................... 935,316 op/s
-
-uild
-  generate id .................................... 31,383 op/s
-
 uuid
-  generate UUIDv1 ................................ 1,643,958 op/s
-  generate UUIDv4 ................................ 378,027 op/s
+  generate UUIDv1 ................................ 1,899,093 op/s
+  generate UUIDv4 ................................ 428,673 op/s
 
 uuid-with-v6
-  generate UUIDv6 ................................ 259,167 op/s
-  generate UUIDv6 with MAC ....................... 840,126 op/s
+  generate UUIDv6 ................................ 282,545 op/s
+  generate UUIDv6 without randomness ............. 825,053 op/s
+
+scuid
+  generate SCUID ................................. 927,015 op/s
+
+uild
+  generate ULID .................................. 32,275 op/s
 ```
 
 The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 1.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [ulid](https://www.npmjs.com/package/ulid) and [scuid](https://www.npmjs.com/package/scuid), the later of which is a faster version of [cuid](https://www.npmjs.com/package/cuid).
 
 ### Collision risk
 
-Each UUIDv6 ends with 8 hex-encoded random bytes. If your application generates more than 4,294,967,296 ids per [100 nano-second interval](https://tools.ietf.org/html/rfc4122#section-4.1.4) you will almost certainly experience id collision. Furthermore, following the logic of the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem), the probability of a collision is greater than 50% when generating approximately 78,000 ids per interval.
+By default, each UUIDv6 ends with 8 hex-encoded random bytes. If your application generates more than 4,294,967,296 ids per [100 nano-second interval](https://tools.ietf.org/html/rfc4122#section-4.1.4) you will certainly experience id collision. Furthermore, following the logic of the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem), the probability of a collision is greater than 50% when generating approximately 78,000 ids per interval.
+
+```js
+assert((1 - Math.pow(Math.E, ((-1 * (78000 * (78000 - 1))) / (2 * 4294967296)))) > .5)
+```
+
+
+## Development
+
+### Environment
+
+Node.js 4.x (LTS) is required.
+
+### Tests
+
+To run the full test suite, including unit tests, collision checks, and linting:
+
+```sh
+npm test
+```
+
+To run the only the unit test suite:
+
+```sh
+npm run test-unit
+```
+
+This project maintains 100% coverage of statements, branches, and functions. To determine unit test coverage:
+
+```sh
+npm run coverage
+```
+
+To run the performance benchmark suite:
+
+```sh
+npm run benchmark
+```
+
+### Contribute
+
+PRs are welcome! PRs must pass unit tests, collision checks, and linting prior to merge. For bugs, please include a failing test which passes when your PR is applied. To enable a git hook that runs `npm test` prior to pushing, `cd` into your repo and run:
+
+```sh
+touch .git/hooks/pre-push
+chmod +x .git/hooks/pre-push
+echo "npm test" > .git/hooks/pre-push
+```
+
+### Versioning
+
+This project follows [semantic versioning](http://semver.org/).
 
 
 ## References
