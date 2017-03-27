@@ -85,15 +85,15 @@ console.log(v6WithMAC());
 
 ## Why
 
-Inspired by [UUID "Version 6", *The version RFC 4122 forgot*](https://bradleypeabody.github.io/uuidv6/), this module extends the popular [uuid module](https://www.npmjs.com/package/uuid) to provide a `v6` method.
+Inspired by [UUID "Version 6", *The version RFC 4122 forgot*](https://bradleypeabody.github.io/uuidv6/), this module extends [uuid](https://www.npmjs.com/package/uuid) by adding the ability to generate UUIDv6 identifiers.
 
-"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in identifiers where lexicographic sorting also yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted.
+"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in identifiers where lexicographic sorting yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted.
 
-Internally, this module implements the "Version 6" specification by first creating a UUIDv1, rearranging the timestamp, then generating eight cryptographically-strong bytes to populate the remaining portion of the identifier. Similar to Version 1, clock sequence and MAC address data can be retained by constructing a UUIDv6 generator with the `disableRandom` option (see the example below).
+Internally, this module implements the "Version 6" specification by first creating a UUIDv1, rearranging the timestamp, then generating eight cryptographically-strong bytes to populate the remaining portion of the identifier. Similar to Version 1, clock sequence and MAC address information can be retained by constructing a UUIDv6 generator with the `disableRandom` option (see the example below).
 
 ### UUIDv1 versus UUIDv6
 
-Below are 20 UUIDv1 identifiers and the corresponding UUIDv6 identifiers generated at 30 second intervals. Note the key differences:
+Below are 20 UUIDv1 ids and the corresponding UUIDv6 ids generated at 30 second intervals. Note the critical differences:
 
 - The "high" portion of the timestamp is at the beginning, followed by the "medium" and "low"
 - `xxxxxxxx-xxxx-1xxx-xxxx-xxxxxxxxxxxx` &rarr; `xxxxxxxx-xxxx-6xxx-xxxx-xxxxxxxxxxxx`
@@ -147,7 +147,7 @@ uild
   generate ULID .................................. 32,275 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 1.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [ulid](https://www.npmjs.com/package/ulid) and [scuid](https://www.npmjs.com/package/scuid), the later of which is a faster version of [cuid](https://www.npmjs.com/package/cuid).
+The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [ulid](https://www.npmjs.com/package/ulid) and [scuid](https://www.npmjs.com/package/scuid), the later of which is a faster version of [cuid](https://www.npmjs.com/package/cuid).
 
 ### Collision risk
 
