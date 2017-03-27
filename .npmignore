@@ -1,5 +1,6 @@
 .eslintrc
 .gitignore
+.travis.yml
 benchmark
 coverage
 test
