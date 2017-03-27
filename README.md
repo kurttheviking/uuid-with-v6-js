@@ -151,7 +151,7 @@ The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 
 
 ### Collision risk
 
-Each UUIDv6 ends with 8 random bytes encoded as hex. If your application generates more than 4,294,967,296 ids per [100 nano-second interval](https://tools.ietf.org/html/rfc4122#section-4.1.4) you will almost certainly experience an id collision. Furthermore, following the logic of the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem), the probability of a collision is greater than 50% at approximately 78,000 ids per interval.
+Each UUIDv6 ends with 8 hex-encoded random bytes. If your application generates more than 4,294,967,296 ids per [100 nano-second interval](https://tools.ietf.org/html/rfc4122#section-4.1.4) you will almost certainly experience an id collision. Furthermore, following the logic of the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem), the probability of a collision is greater than 50% at approximately 78,000 ids per interval.
 
 
 ## References
