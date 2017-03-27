@@ -1,4 +1,4 @@
-uuid-with-v6 [![Build Status](https://travis-ci.org/kurttheviking/uuid-with-v6-js.svg?branch=master)](https://travis-ci.org/kurttheviking/uuid-with-v6-js)
+uuid-with-v6 [![Build Status](https://travis-ci.org/kurttheviking/uuid-with-v6-js.svg?branch=master)](https://travis-ci.org/kurttheviking/uuid-with-v6-js) [![Coverage Status](https://coveralls.io/repos/github/kurttheviking/uuid-with-v6-js/badge.svg?branch=master)](https://coveralls.io/github/kurttheviking/uuid-with-v6-js?branch=master)
 ============
 
 UUID Version 6 for Node.js
