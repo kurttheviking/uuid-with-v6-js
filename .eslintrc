@@ -1,0 +1,8 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "comma-dangle": 0,
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
+    "max-len": [2, 120, 2]
+  }
+}
