@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "benchmark": "matcha --reporter plain",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly ./test -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "./node_modules/istanbul/lib/cli.js cover --report=json-summary --report=html _mocha ./test/unit -- --recursive",
     "test": "node node_modules/mocha/bin/mocha ./test --recursive",
     "test-unit": "node node_modules/mocha/bin/mocha ./test/unit --recursive"
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "coveralls": "2.12.0",
     "eslint": "3.9.1",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0",
