@@ -213,4 +213,4 @@ This project follows [semantic versioning](http://semver.org/).
 ## License
 
 - This module is licensed under the [ISC License](./LICENSE)
-- This underlying uuid module is licensed under the [MIT License](https://github.com/kelektiv/node-uuid/blob/master/LICENSE.md)
+- The underlying uuid module is licensed under the [MIT License](https://github.com/kelektiv/node-uuid/blob/master/LICENSE.md)
