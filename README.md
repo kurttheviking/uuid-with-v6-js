@@ -1,7 +1,7 @@
 uuid-with-v6
 ============
 
-JavaScript implementation of UUIDv6.
+UUID Version 6 for Node.js
 
 
 ## Quickstart
