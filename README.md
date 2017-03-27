@@ -29,9 +29,7 @@ See the [`uuid` documentation](https://github.com/kelektiv/node-uuid#uuidv4optio
 
 #### Definition
 
-```js
-uuid.v6()
-```
+`uuid.v6()`
 
 #### Parameters
 
@@ -54,9 +52,7 @@ console.log(uuid.v6());
 
 #### Definition
 
-```js
-uuid.v6create([options])
-```
+`uuid.v6create([options])`
 
 #### Parameters
 
