@@ -15,7 +15,7 @@ console.log(uuid.v6())
 
 ## API
 
-This module extends `uuid` and thus can serve as a drop-in replacement with added "Version 6" functionality.
+This module extends `uuid` and is intended to serve as a drop-in replacement with added "Version 6" functionality.
 
 ### `uuid#v1`
 
