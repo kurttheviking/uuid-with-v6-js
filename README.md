@@ -133,18 +133,21 @@ By default, this module generates a UUIDv1 as well as a series of random bytes t
 
 ```
 uuid
-  generate UUIDv1 ................................ 1,899,093 op/s
-  generate UUIDv4 ................................ 428,673 op/s
+  generate UUIDv1 ................................ 1,862,245 op/s
+  generate UUIDv4 ................................ 436,730 op/s
 
 uuid-with-v6
-  generate UUIDv6 ................................ 282,545 op/s
-  generate UUIDv6 without randomness ............. 825,053 op/s
+  generate UUIDv6 ................................ 280,226 op/s
+  generate UUIDv6 without randomness ............. 813,677 op/s
+
+uniqid
+  generate UNIQID ................................ 2,619,573 op/s
 
 scuid
-  generate SCUID ................................. 927,015 op/s
+  generate SCUID ................................. 920,816 op/s
 
 uild
-  generate ULID .................................. 32,275 op/s
+  generate ULID .................................. 32,165 op/s
 ```
 
 The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [ulid](https://www.npmjs.com/package/ulid) and [scuid](https://www.npmjs.com/package/scuid), the later of which is a faster version of [cuid](https://www.npmjs.com/package/cuid).

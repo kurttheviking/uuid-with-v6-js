@@ -3,6 +3,7 @@
 
 const scuid = require('scuid');
 const uild = require('ulid');
+const uniqid = require('uniqid');
 const uuid = require('uuid');
 
 const index = require('../index');
@@ -17,6 +18,10 @@ suite('uuid', () => {
 suite('uuid-with-v6', () => {
   bench('generate UUIDv6', () => index.v6());
   bench('generate UUIDv6 without randomness', () => v6WithMAC());
+});
+
+suite('uniqid', () => {
+  bench('generate UNIQID', () => uniqid());
 });
 
 suite('scuid', () => {
