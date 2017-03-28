@@ -87,7 +87,7 @@ console.log(v6WithMAC());
 
 Inspired by [UUID "Version 6", *The version RFC 4122 forgot*](https://bradleypeabody.github.io/uuidv6/), this module extends [uuid](https://www.npmjs.com/package/uuid) by adding the ability to generate UUIDv6 identifiers.
 
-"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in identifiers where lexicographic sorting yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted.
+"Version 6" UUIDs arrange the timestamp from high to low bytes (with some bit-shifting to account for the version parameter) resulting in identifiers where lexicographic sorting yields time-based sorting. The non-timestamp portion of the UUID is filled with random bits (similar to Version 4); consequently, ids generated within the same clock tick are not guaranteed to be lexicographically sorted into time-based order.
 
 Internally, this module implements the "Version 6" specification by first creating a UUIDv1, rearranging the timestamp, then generating eight cryptographically-strong bytes to populate the remaining portion of the identifier. Similar to Version 1, clock sequence and MAC address information can be retained by constructing a UUIDv6 generator with the `disableRandom` option (see the example below).
 
