@@ -4,7 +4,21 @@ uuid-with-v6 [![Build Status](https://travis-ci.org/kurttheviking/uuid-with-v6-j
 UUID Version 6 for Node.js
 
 
-## Quickstart
+## Getting started
+
+### Prerequisites
+
+Node.js 4.x (LTS) is required.
+
+### Install
+
+Install with [npm](https://www.npmjs.com):
+
+```sh
+npm install --save uuid-with-v6
+```
+
+### Use
 
 ```js
 const uuid = require('uuid-with-v6');
@@ -162,10 +176,6 @@ assert((1 - Math.pow(Math.E, ((-1 * (78000 * (78000 - 1))) / (2 * 4294967296))))
 
 
 ## Development
-
-### Environment
-
-Node.js 4.x (LTS) is required.
 
 ### Tests
 
