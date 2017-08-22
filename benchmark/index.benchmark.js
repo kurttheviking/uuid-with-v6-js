@@ -28,6 +28,6 @@ suite('scuid', () => {
   bench('generate SCUID', () => scuid());
 });
 
-suite('uild', () => {
+suite('ulid', () => {
   bench('generate ULID', () => uild());
 });

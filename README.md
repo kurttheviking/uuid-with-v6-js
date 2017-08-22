@@ -160,7 +160,7 @@ uniqid
 scuid
   generate SCUID ................................. 920,816 op/s
 
-uild
+ulid
   generate ULID .................................. 32,165 op/s
 ```
 
