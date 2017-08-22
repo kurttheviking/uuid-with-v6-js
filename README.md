@@ -151,24 +151,24 @@ By default, this module generates a UUIDv1 as well as a series of random bytes t
 
 ```
 uuid
-  generate UUIDv1 ................................ 1,862,245 op/s
-  generate UUIDv4 ................................ 436,730 op/s
+  generate UUIDv1 ................................ 1,903,395 op/s
+  generate UUIDv4 ................................ 415,695 op/s
 
 uuid-with-v6
-  generate UUIDv6 ................................ 280,226 op/s
-  generate UUIDv6 without randomness ............. 813,677 op/s
+  generate UUIDv6 ................................ 273,566 op/s
+  generate UUIDv6 without randomness ............. 819,767 op/s
 
 uniqid
-  generate UNIQID ................................ 2,619,573 op/s
+  generate UNIQID ................................ 2,608,630 op/s
 
 scuid
-  generate SCUID ................................. 920,816 op/s
+  generate SCUID ................................. 927,743 op/s
 
 ulid
-  generate ULID .................................. 32,165 op/s
+  generate ULID .................................. 29,619 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [uniqid](https://www.npmjs.com/package/uniqid), [ulid](https://www.npmjs.com/package/ulid), and [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)).
+The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [uniqid](https://www.npmjs.com/package/uniqid), [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)), and [ulid](https://www.npmjs.com/package/ulid).
 
 ### Collision risk
 
