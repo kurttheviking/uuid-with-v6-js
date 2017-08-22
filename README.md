@@ -23,7 +23,7 @@ npm install --save uuid-with-v6
 ```js
 const uuid = require('uuid-with-v6');
 
-console.log(uuid.v6())
+console.log(uuid.v6());
 ```
 
 
