@@ -168,7 +168,7 @@ ulid
   generate ULID .................................. 29,619 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) If interested, read more about [uniqid](https://www.npmjs.com/package/uniqid), [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)), and [ulid](https://www.npmjs.com/package/ulid).
+The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)), and [ulid](https://www.npmjs.com/package/ulid).
 
 ### Collision risk
 
