@@ -1,13 +1,17 @@
 /* global suite, bench */
 /* eslint global-require: 0, import/no-extraneous-dependencies: 0 */
 
+const Puid = require('puid');
 const scuid = require('scuid');
+const shortid = require('shortid');
 const uild = require('ulid');
 const uniqid = require('uniqid');
 const uuid = require('uuid');
 
 const index = require('../index');
 
+const puid = new Puid();
+const puidWithoutNodeId = new Puid(true);
 const v6WithMAC = index.v6setup({ disableRandom: true });
 
 suite('uuid', () => {
@@ -24,8 +28,17 @@ suite('uniqid', () => {
   bench('generate UNIQID', () => uniqid());
 });
 
+suite('puid', () => {
+  bench('generate PUID', () => puid.generate());
+  bench('generate PUID without NodeId', () => puidWithoutNodeId.generate());
+});
+
 suite('scuid', () => {
   bench('generate SCUID', () => scuid());
+});
+
+suite('shortid', () => {
+  bench('generate ShortID', () => shortid());
 });
 
 suite('ulid', () => {

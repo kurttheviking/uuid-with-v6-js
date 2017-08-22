@@ -151,24 +151,31 @@ By default, this module generates a UUIDv1 as well as a series of random bytes t
 
 ```
 uuid
-  generate UUIDv1 ................................ 1,903,395 op/s
-  generate UUIDv4 ................................ 415,695 op/s
+  generate UUIDv1 ................................ 1,897,428 op/s
+  generate UUIDv4 ................................ 420,446 op/s
 
 uuid-with-v6
-  generate UUIDv6 ................................ 273,566 op/s
-  generate UUIDv6 without randomness ............. 819,767 op/s
+  generate UUIDv6 ................................ 276,106 op/s
+  generate UUIDv6 without randomness ............. 855,674 op/s
 
 uniqid
-  generate UNIQID ................................ 2,608,630 op/s
+  generate UNIQID ................................ 2,635,674 op/s
+
+puid
+  generate PUID .................................. 1,106,059 op/s
+  generate PUID without NodeId ................... 403,728 op/s
 
 scuid
-  generate SCUID ................................. 927,743 op/s
+  generate SCUID ................................. 888,604 op/s
+
+shortid
+  generate ShortID ............................... 36,738 op/s
 
 ulid
-  generate ULID .................................. 29,619 op/s
+  generate ULID .................................. 29,562 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)), and [ulid](https://www.npmjs.com/package/ulid).
+The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [puid](https://www.npmjs.com/package/puid), [scuid](https://www.npmjs.com/package/scuid) (a faster version of [cuid](https://www.npmjs.com/package/cuid)), [shortid](https://www.npmjs.com/package/shortid), and [ulid](https://www.npmjs.com/package/ulid).
 
 ### Collision risk
 

@@ -48,7 +48,9 @@
     "mocha": "3.1.2",
     "mocha-eslint": "3.0.1",
     "mockery": "2.0.0",
+    "puid": "1.0.7",
     "scuid": "1.0.1",
+    "shortid": "2.2.8",
     "sinon": "1.17.7",
     "ulid": "0.1.0",
     "uniqid": "4.1.1"
