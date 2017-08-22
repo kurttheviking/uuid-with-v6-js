@@ -78,7 +78,7 @@ console.log(uuid.v6());
 
 | Parameter | Type | Description | Default |
 | :-------- | :--- | :---------- | :------ |
-| `disableRandom` | `Boolean` | Disable the use of UUIDv4 to populate the non-timestamp portion of the identifier | 'false' |
+| `disableRandom` | `Boolean` | Disable the use of UUIDv4 to populate the non-timestamp portion of the identifier | `false` |
 
 #### Returns
 
