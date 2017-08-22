@@ -115,7 +115,7 @@ Below are 20 UUIDv1 ids and the corresponding UUIDv6 ids generated at 30 second 
 
 - The "high" portion of the timestamp is at the beginning, followed by the "medium" and "low"
 - The 15th character (version number) is a `6`, rather than a `1`
-- Each identifier ends with cryptographically-strong randomness
+- Each UUIDv6 identifier ends with cryptographically-strong randomness
 
 ```
 UUIDv1                               UUIDv6
