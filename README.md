@@ -147,7 +147,7 @@ ab116740-1269-11e7-a24b-96d95aa38c32 1e71269a-b116-6740-a694-68c004266291
 
 ### Performance
 
-By default, this module generates a UUIDv1 as well as a series of random bytes to compose a single UUIDv6. As a result, id generation is slower than some alternatives. Using the `disableRandom` option improves performance but leaks MAC information.
+By default, this module generates a UUIDv1 and a series of random bytes to compose a single UUIDv6. As a result, id generation is slower than some alternatives. The `disableRandom` option improves performance but leaks MAC information.
 
 ```
 uuid
