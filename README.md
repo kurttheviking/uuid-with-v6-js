@@ -33,11 +33,15 @@ This module extends `uuid` and is intended to serve as a drop-in replacement wit
 
 ### `uuid#v1`
 
-See the [`uuid` documentation](https://github.com/kelektiv/node-uuid#uuidv1options--buffer--offset).
+See the [`uuid` documentation](https://github.com/kelektiv/node-uuid/tree/72fbabbf00192817bdce7073e323361f5e7bdd67#version-3).
 
 ### `uuid#v4`
 
-See the [`uuid` documentation](https://github.com/kelektiv/node-uuid#uuidv4options--buffer--offset).
+See the [`uuid` documentation](https://github.com/kelektiv/node-uuid/tree/72fbabbf00192817bdce7073e323361f5e7bdd67#version-4).
+
+### `uuid#v5`
+
+See the [`uuid` documentation](https://github.com/kelektiv/node-uuid/tree/72fbabbf00192817bdce7073e323361f5e7bdd67#version-5).
 
 ### `uuid#v6`
 

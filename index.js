@@ -1,5 +1,7 @@
 const crypto = require('crypto');
-const uuid = require('uuid');
+const v1 = require('uuid/v1');
+const v4 = require('uuid/v4');
+const v5 = require('uuid/v5');
 
 function create(opts) {
   const options = opts || {};
@@ -7,7 +9,7 @@ function create(opts) {
   const disableRandom = Boolean(options.disableRandom);
 
   function generateId() {
-    const raw = uuid.v1();
+    const raw = v1();
 
     const prefix = `${raw.substring(15, 18)}${raw.substring(9, 13)}${raw.substring(0, 5)}6${raw.substring(5, 8)}`;
     const prefixFormatted = `${prefix.substr(0, 8)}-${prefix.substr(8, 4)}-${prefix.substr(12)}`;
@@ -24,4 +26,4 @@ function create(opts) {
   return generateId;
 }
 
-module.exports = Object.assign(uuid, { v6: create(), v6setup: create });
+module.exports = { v1, v4, v5, v6: create(), v6setup: create };

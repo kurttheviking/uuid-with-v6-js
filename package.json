@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/kurttheviking/uuid-with-v6-js#readme",
   "dependencies": {
-    "uuid": "3.0.1"
+    "uuid": "3.1.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
