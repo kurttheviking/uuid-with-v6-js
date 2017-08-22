@@ -114,7 +114,7 @@ Internally, this module implements the "Version 6" specification by first creati
 Below are 20 UUIDv1 ids and the corresponding UUIDv6 ids generated at 30 second intervals. Note the critical differences:
 
 - The "high" portion of the timestamp is at the beginning, followed by the "medium" and "low"
-- `xxxxxxxx-xxxx-1xxx-xxxx-xxxxxxxxxxxx` &rarr; `xxxxxxxx-xxxx-6xxx-xxxx-xxxxxxxxxxxx`
+- The 15th character (version number) is a `6`, rather than a `1`
 - Each identifier ends with cryptographically-strong randomness
 
 ```
