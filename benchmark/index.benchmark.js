@@ -1,6 +1,7 @@
 /* global suite, bench */
 /* eslint global-require: 0, import/no-extraneous-dependencies: 0 */
 
+const FlakeId = require('flake-idgen');
 const Puid = require('puid');
 const scuid = require('scuid');
 const shortid = require('shortid');
@@ -10,6 +11,7 @@ const uuid = require('uuid');
 
 const index = require('../index');
 
+const flakeId = new FlakeId();
 const puid = new Puid();
 const puidWithoutNodeId = new Puid(true);
 const v6WithMAC = index.v6setup({ disableRandom: true });
@@ -26,6 +28,10 @@ suite('uuid-with-v6', () => {
 
 suite('uniqid', () => {
   bench('generate UNIQID', () => uniqid());
+});
+
+suite('flakeid', () => {
+  bench('generate Flake ID', () => flakeId.next());
 });
 
 suite('puid', () => {

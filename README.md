@@ -161,6 +161,9 @@ uuid-with-v6
 uniqid
   generate UNIQID ................................ 2,635,674 op/s
 
+flakeid
+  generate Flake ID .............................. 1,290,409 op/s
+
 puid
   generate PUID .................................. 1,106,059 op/s
   generate PUID without NodeId ................... 403,728 op/s
@@ -175,7 +178,7 @@ ulid
   generate ULID .................................. 29,562 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [puid](https://www.npmjs.com/package/puid), [scuid](https://www.npmjs.com/package/scuid) (faster [cuid](https://www.npmjs.com/package/cuid)), [shortid](https://www.npmjs.com/package/shortid), and [ulid](https://www.npmjs.com/package/ulid).
+The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [flakeid](https://www.npmjs.com/package/flake-idgen), [puid](https://www.npmjs.com/package/puid), [scuid](https://www.npmjs.com/package/scuid) (faster [cuid](https://www.npmjs.com/package/cuid)), [shortid](https://www.npmjs.com/package/shortid), and [ulid](https://www.npmjs.com/package/ulid).
 
 ### Collision risk
 
