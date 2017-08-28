@@ -8,7 +8,7 @@ const expect = require('chai').expect;
 describe('collision: uuid#v6', () => {
   const v6 = require('../index').v6;
 
-  it('does not collide when generating 1,000,000 sequetual ids in a single process', () => {
+  it('does not collide when generating 1,000,000 sequential ids in a single process', () => {
     function check() {
       const seen = new Set();
 
@@ -30,7 +30,7 @@ describe('collision: uuid#v6', () => {
 describe('collision: uuid#v6 with disableRandom option activated', () => {
   const v6 = require('../index').v6setup({ disableRandom: true });
 
-  it('does not collide when generating 1,000,000 sequetual ids in a single process', () => {
+  it('does not collide when generating 1,000,000 sequential ids in a single process', () => {
     function check() {
       const seen = new Set();
 
