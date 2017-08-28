@@ -1,6 +1,6 @@
 {
   "name": "uuid-with-v6",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "UUID Version 6",
   "main": "index.js",
   "scripts": {
