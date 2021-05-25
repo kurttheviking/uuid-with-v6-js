@@ -1,8 +1,9 @@
 {
   "name": "uuid-with-v6",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "UUID Version 6",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "benchmark": "matcha --reporter plain",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly ./test/unit -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
@@ -35,7 +36,9 @@
   },
   "homepage": "https://github.com/kurttheviking/uuid-with-v6-js#readme",
   "dependencies": {
-    "uuid": "3.1.0"
+    "@types/uuid": "^8.3.0",
+    "@types/node": "^6.0.0 || ^8.0.0 || ^10.0.0 || ^12.0.0 || ^14.0.0",
+    "uuid": "8.3.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
