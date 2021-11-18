@@ -1,7 +1,7 @@
 const crypto = require('crypto');
-const v1 = require('uuid/v1');
-const v4 = require('uuid/v4');
-const v5 = require('uuid/v5');
+const v1 = require('uuid').v1;
+const v4 = require('uuid').v4;
+const v5 = require('uuid').v5;
 
 function create(opts) {
   const options = opts || {};

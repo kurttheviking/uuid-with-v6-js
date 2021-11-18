@@ -48,5 +48,5 @@ suite('shortid', () => {
 });
 
 suite('ulid', () => {
-  bench('generate ULID', () => uild());
+  bench('generate ULID', () => uild.ulid());
 });

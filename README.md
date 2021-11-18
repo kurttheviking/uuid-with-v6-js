@@ -8,7 +8,7 @@ UUID Version 6 for Node.js
 
 ### Prerequisites
 
-Node.js 4.x (LTS) is required.
+Node.js 8.x+ is required.
 
 ### Install
 
@@ -151,34 +151,34 @@ By default, this module generates a UUIDv1 and a series of random bytes to compo
 
 ```
 uuid
-  generate UUIDv1 ................................ 1,897,428 op/s
-  generate UUIDv4 ................................ 420,446 op/s
+  generate UUIDv1 ................................ 1,345,808 op/s
+  generate UUIDv4 ................................ 501,207 op/s
 
 uuid-with-v6
-  generate UUIDv6 ................................ 276,106 op/s
-  generate UUIDv6 without randomness ............. 855,674 op/s
+  generate UUIDv6 ................................ 100,127 op/s
+  generate UUIDv6 without randomness ............. 986,389 op/s
 
 uniqid
-  generate UNIQID ................................ 2,635,674 op/s
+  generate UNIQID ................................ 2,533,730 op/s
 
 flakeid
-  generate Flake ID .............................. 1,290,409 op/s
+  generate Flake ID .............................. 2,055,784 op/s
 
 puid
-  generate PUID .................................. 1,106,059 op/s
-  generate PUID without NodeId ................... 403,728 op/s
+  generate PUID .................................. 1,222,662 op/s
+  generate PUID without NodeId ................... 605,675 op/s
 
 scuid
-  generate SCUID ................................. 888,604 op/s
+  generate SCUID ................................. 795,367 op/s
 
 shortid
-  generate ShortID ............................... 36,738 op/s
+  generate ShortID ............................... 9,986 op/s
 
 ulid
-  generate ULID .................................. 29,562 op/s
+  generate ULID .................................. 7,004 op/s
 ```
 
-The above statistics represent performance on a 2nd-generation Lenovo Carbon X1 (i5 2.90GHz, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [flakeid](https://www.npmjs.com/package/flake-idgen), [puid](https://www.npmjs.com/package/puid), [scuid](https://www.npmjs.com/package/scuid) (faster [cuid](https://www.npmjs.com/package/cuid)), [shortid](https://www.npmjs.com/package/shortid), and [ulid](https://www.npmjs.com/package/ulid).
+The above statistics represent performance on an LG Gram (i5, 8GB DDR3) running Ubuntu 16 LTS (16.04.2). [Your mileage may vary.](https://foldoc.org/ymmv) Read more about [uniqid](https://www.npmjs.com/package/uniqid), [flakeid](https://www.npmjs.com/package/flake-idgen), [puid](https://www.npmjs.com/package/puid), [scuid](https://www.npmjs.com/package/scuid) (faster [cuid](https://www.npmjs.com/package/cuid)), [shortid](https://www.npmjs.com/package/shortid), and [ulid](https://www.npmjs.com/package/ulid).
 
 ### Collision risk
 
