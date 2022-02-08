@@ -1,14 +1,22 @@
 {
   "name": "uuid-with-v6",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "UUID Version 6",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "benchmark": "matcha --reporter plain",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly ./test/unit -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "./node_modules/istanbul/lib/cli.js cover --report=json-summary --report=html _mocha ./test/unit -- --recursive",
     "test": "node node_modules/mocha/bin/mocha ./test --recursive",
-    "test-unit": "node node_modules/mocha/bin/mocha ./test/unit --recursive"
+    "test-unit": "node node_modules/mocha/bin/mocha ./test/unit --recursive",
+    "build": "./scripts/build.sh",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "uuid": "./dist/uuidgen.js",
+    "uuidgen": "./dist/uuidgen.js",
+    "@kael-shipman/uuid-with-v6": "./dist/uuidgen.js"
   },
   "engines": {
     "node": ">8.x"
@@ -35,7 +43,10 @@
   },
   "homepage": "https://github.com/kurttheviking/uuid-with-v6-js#readme",
   "dependencies": {
-    "uuid": "8.3.2"
+    "@types/randombytes": "^2.0.0",
+    "@types/uuid": ">=8.0.0",
+    "randombytes": "^2.1.0",
+    "uuid": ">=8.3.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -53,7 +64,8 @@
     "scuid": "1.1.0",
     "shortid": "2.2.16",
     "sinon": "1.17.7",
-    "ulid": "2.3.0",
-    "uniqid": "5.4.0"
+    "typescript": ">=3.0.0",
+    "ulid": "^2.3.0",
+    "uniqid": "^5.4.0"
   }
 }

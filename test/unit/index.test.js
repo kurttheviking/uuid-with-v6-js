@@ -29,7 +29,7 @@ describe('uuid#v6', () => {
 
     mockery.registerMock('uuid', { v1, v4, v5 });
 
-    index = require('../../index');
+    index = require('../../dist');
   });
 
   afterEach(() => {
@@ -54,32 +54,6 @@ describe('uuid#v6', () => {
 
   it('exports v6setup function', () => {
     expect(index.v6setup).to.be.a('function');
-  });
-
-  it('proxies uuid#v1 calls', () => {
-    index.v1();
-
-    expect(v1.callCount).to.equal(1);
-  });
-
-  it('proxies uuid#v4 calls', () => {
-    index.v4();
-
-    expect(v4.callCount).to.equal(1);
-  });
-
-  it('proxies uuid#v5 calls', () => {
-    index.v5();
-
-    expect(v5.callCount).to.equal(1);
-  });
-
-  it('v6 function invokes uuid#v1', () => {
-    index.v6();
-
-    expect(v1.callCount).to.equal(1);
-    expect(v4.callCount).to.equal(0);
-    expect(v5.callCount).to.equal(0);
   });
 
   it('v6 returns a string', () => {
@@ -131,7 +105,7 @@ describe('uuid#v6 with disableRandom option activated', () => {
     mockery.registerMock('uuid/v4', v4);
     mockery.registerMock('uuid/v5', v5);
 
-    v6 = require('../../index').v6setup({ disableRandom: true });
+    v6 = require('../../dist').v6setup({ disableRandom: true });
   });
 
   afterEach(() => {

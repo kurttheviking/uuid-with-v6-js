@@ -1,9 +1,17 @@
-const crypto = require('crypto');
-const v1 = require('uuid').v1;
-const v4 = require('uuid').v4;
-const v5 = require('uuid').v5;
+import * as randomBytes from "randombytes";
+import { v1 } from "uuid";
 
-function create(opts) {
+export * from "uuid";
+
+export interface V6SetupOpts {
+    disableRandom: boolean;
+}
+
+export interface v6 {
+  (): string;
+}
+
+export function v6setup(opts?: Partial<V6SetupOpts>): v6  {
   const options = opts || {};
 
   const disableRandom = Boolean(options.disableRandom);
@@ -18,7 +26,7 @@ function create(opts) {
       return `${prefixFormatted}${raw.substr(18)}`;
     }
 
-    const random = crypto.randomBytes(8).toString('hex');
+    const random = randomBytes(8).toString('hex');
 
     return `${prefixFormatted}-${random.substring(0, 4)}-${random.substring(4)}`;
   }
@@ -26,4 +34,5 @@ function create(opts) {
   return generateId;
 }
 
-module.exports = { v1, v4, v5, v6: create(), v6setup: create };
+export const v6: v6 = v6setup();
+

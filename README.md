@@ -26,6 +26,10 @@ const uuid = require('uuid-with-v6');
 console.log(uuid.v6());
 ```
 
+#### Command Line
+
+This package additionally bundles a command-line scripts, `uuidgen`, which you can use to to generate a uuid of any given flavor. See `npx -p uuid-with-v6 uuidgen --help` for details.
+
 
 ## API
 
