@@ -27,9 +27,7 @@ describe('uuid#v6', () => {
     v4 = sinon.stub().returns(uuid());
     v5 = sinon.stub().returns(uuid());
 
-    mockery.registerMock('uuid/v1', v1);
-    mockery.registerMock('uuid/v4', v4);
-    mockery.registerMock('uuid/v5', v5);
+    mockery.registerMock('uuid', { v1, v4, v5 });
 
     index = require('../../dist');
   });

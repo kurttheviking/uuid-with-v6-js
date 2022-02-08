@@ -13,7 +13,7 @@
     "prepublishOnly": "rm -Rf dist; npx -p typescript tsc"
   },
   "engines": {
-    "node": ">4.x"
+    "node": ">8.x"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@types/uuid": ">=3.1.0",
     "@types/node": ">=6.0.0",
-    "uuid": ">=3.1.0"
+    "uuid": ">=8.3.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -47,18 +47,18 @@
     "eslint": "3.9.1",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0",
-    "flake-idgen": "1.1.0",
+    "flake-idgen": "1.4.0",
     "istanbul": "0.4.5",
     "matcha": "0.7.0",
     "mocha": "3.1.2",
     "mocha-eslint": "3.0.1",
     "mockery": "2.0.0",
     "puid": "1.0.7",
-    "scuid": "1.0.1",
-    "shortid": "2.2.8",
+    "scuid": "1.1.0",
+    "shortid": "2.2.16",
     "sinon": "1.17.7",
-    "ulid": "0.1.0",
-    "uniqid": "4.1.1",
+    "ulid": "^2.3.0",
+    "uniqid": "^5.4.0",
     "typescript": ">=3.0.0"
   }
 }
