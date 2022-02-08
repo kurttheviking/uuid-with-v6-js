@@ -1,6 +1,6 @@
 {
   "name": "uuid-with-v6",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "UUID Version 6",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,13 @@
     "coverage": "./node_modules/istanbul/lib/cli.js cover --report=json-summary --report=html _mocha ./test/unit -- --recursive",
     "test": "node node_modules/mocha/bin/mocha ./test --recursive",
     "test-unit": "node node_modules/mocha/bin/mocha ./test/unit --recursive",
-    "prepublishOnly": "rm -Rf dist; npx -p typescript tsc"
+    "build": "./scripts/build.sh",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "uuid": "./dist/uuidgen.js",
+    "uuidgen": "./dist/uuidgen.js",
+    "@kael-shipman/uuid-with-v6": "./dist/uuidgen.js"
   },
   "engines": {
     "node": ">8.x"
