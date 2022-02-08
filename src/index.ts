@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+import * as randomBytes from "randombytes";
 import { v1 } from "uuid";
 
 export * from "uuid";
@@ -26,7 +26,7 @@ export function v6setup(opts?: Partial<V6SetupOpts>): v6  {
       return `${prefixFormatted}${raw.substr(18)}`;
     }
 
-    const random = crypto.randomBytes(8).toString('hex');
+    const random = randomBytes(8).toString('hex');
 
     return `${prefixFormatted}-${random.substring(0, 4)}-${random.substring(4)}`;
   }

@@ -1,6 +1,6 @@
 {
   "name": "uuid-with-v6",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "UUID Version 6",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -37,8 +37,9 @@
   },
   "homepage": "https://github.com/kurttheviking/uuid-with-v6-js#readme",
   "dependencies": {
-    "@types/uuid": ">=3.1.0",
-    "@types/node": ">=6.0.0",
+    "@types/randombytes": "^2.0.0",
+    "@types/uuid": ">=8.0.0",
+    "randombytes": "^2.1.0",
     "uuid": ">=8.3.2"
   },
   "devDependencies": {
@@ -57,8 +58,8 @@
     "scuid": "1.1.0",
     "shortid": "2.2.16",
     "sinon": "1.17.7",
+    "typescript": ">=3.0.0",
     "ulid": "^2.3.0",
-    "uniqid": "^5.4.0",
-    "typescript": ">=3.0.0"
+    "uniqid": "^5.4.0"
   }
 }

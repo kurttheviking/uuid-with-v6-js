@@ -9,7 +9,7 @@
     "removeComments": false,
     "strict": true,
     "noUnusedLocals": true,
-    "types": ["node"],
+    "types": [],
     "forceConsistentCasingInFileNames": true
   },
   "include": [ "./src" ]
